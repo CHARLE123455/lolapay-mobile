@@ -2,16 +2,22 @@
   "expo": {
     "name": "lolapay-mobile",
     "slug": "lolapay-mobile",
+    "scheme": "lolapay-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "splash": {
+      "backgroundColor": "#3d6cf7"
+    },
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.lolapay.app"
     },
     "android": {
+      "package": "com.lolapay.app",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#3d6cf7",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
@@ -20,6 +26,13 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": ["expo-secure-store", "expo-web-browser", "expo-status-bar", [
+      "expo-image-picker",
+      {
+        "photosPermission": "LolaPay uses your photos to set a profile picture."
+      }
+    ]
+  ]
   }
 }
